@@ -2,6 +2,15 @@
 
 `main.rs` 比较了不同数量叶子验证时所需要的 proof 的长度，每次执行数据都不完全一样，但是数量级是不变的。
 
+结果如下：
+
+```shell
+The proof of 1000 leaves: 112619
+The proof of 100 leaves: 24203
+The proof of one leaf: 366
+
+```
+
 ## 方案设计
 
 Witness 包含了合约需要验证的所有数据，其数据结构如下：

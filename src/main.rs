@@ -24,7 +24,7 @@ fn main() {
         .unwrap();
     let proof: Vec<u8> = merkle_proof_compiled.into();
     // length: 112619
-    println!("The proof of leaves: {:?}", proof.len());
+    println!("The proof of 1000 leaves: {:?}", proof.len());
 
     let update_leaves = leaves[0..100].to_vec();
     let merkle_proof = smt
@@ -35,7 +35,7 @@ fn main() {
         .unwrap();
     let proof: Vec<u8> = merkle_proof_compiled.into();
     // length: 24203
-    println!("The proof of leaves: {:?}", proof.len());
+    println!("The proof of 100 leaves: {:?}", proof.len());
 
 
     let update_leaves = leaves[0..1].to_vec();
@@ -47,5 +47,5 @@ fn main() {
         .unwrap();
     let proof: Vec<u8> = merkle_proof_compiled.into();
     // length: 366
-    println!("The proof of leaves: {:?}", proof.len());
+    println!("The proof of one leaf: {:?}", proof.len());
 }

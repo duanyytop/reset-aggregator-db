@@ -28,6 +28,8 @@ fn test_256_smt() {
         let value: H256 = rng.gen::<[u8; 32]>().into();
         update_leaves.push((key, value));
     }
+    smt.update_all(update_leaves.clone())
+        .expect("SMT update leaves error");
     let merkle_proof = smt
         .merkle_proof(update_leaves.iter().map(|leave| leave.0).collect())
         .unwrap();
@@ -60,6 +62,8 @@ fn test_48_smt() {
         let value: H256 = rng.gen::<[u8; 32]>().into();
         update_leaves.push((key.into(), value));
     }
+    smt.update_all(update_leaves.clone())
+        .expect("SMT update leaves error");
     let merkle_proof = smt
         .merkle_proof(update_leaves.iter().map(|leave| leave.0).collect())
         .unwrap();

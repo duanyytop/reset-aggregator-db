@@ -42,7 +42,7 @@ fn test_48_smt() {
     for _ in 0..1000 {
         let random = rng.gen::<[u8; 6]>();
         let mut key = [0u8; 32];
-        key[0..6].copy_from_slice(&random);
+        key[26..].copy_from_slice(&random);
 
         let value: H256 = rng.gen::<[u8; 32]>().into();
         leaves.push((key.into(), value));
@@ -55,7 +55,7 @@ fn test_48_smt() {
     for _ in 0..100 {
         let random = rng.gen::<[u8; 6]>();
         let mut key = [0u8; 32];
-        key[0..6].copy_from_slice(&random);
+        key[26..].copy_from_slice(&random);
 
         let value: H256 = rng.gen::<[u8; 32]>().into();
         update_leaves.push((key.into(), value));
